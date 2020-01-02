@@ -15,22 +15,21 @@ import {
   Text,
   StatusBar,
   Button,
+  ToastAndroid,
 } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 // import codePush from 'react-native-code-push';
 import config from './config';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import {pushNotifications} from './services';
+// import {pushNotifications} from './services';
 
-pushNotifications.configure();
+// pushNotifications.configure();
 
-const App: () => React$Node = () => {
+const App = () => {
   React.useEffect(() => {
     SplashScreen.hide();
   });
-
-  console.log('help - ', config);
 
   return (
     <View style={styles.container}>
@@ -47,12 +46,13 @@ const App: () => React$Node = () => {
                 screen and then come back to see your edits.
               </Text>
               <Button
-                title={'Click here for a push notification'}
+                title={'Press here'}
                 onPress={() => {
-                  pushNotifications.sampleLocalNotification({
-                    title: 'My custom notification title',
-                    message: 'My custom notification message',
-                  });
+                  // pushNotifications.sampleLocalNotification({
+                  //   title: 'My custom notification title',
+                  //   message: 'My custom notification message',
+                  // });
+                  ToastAndroid.show('Button pressed', ToastAndroid.SHORT);
                 }}
               />
             </View>
