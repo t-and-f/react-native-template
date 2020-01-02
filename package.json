@@ -33,9 +33,18 @@
   },
   "jest": {
     "preset": "react-native",
-    "moduleFileExtensions": ["js", "jsx"],
-    "moduleDirectories": ["node_modules", "bower_components", "src"],
-    "roots": ["src"]
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "bower_components",
+      "src"
+    ],
+    "roots": [
+      "src"
+    ]
   },
   "detox": {
     "test-runner": "jest",
