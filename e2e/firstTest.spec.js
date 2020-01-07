@@ -2,6 +2,8 @@
 // import App from '../src/App';
 // import {shallow} from 'enzyme';
 
+const fetch = require('node-fetch');
+
 describe('Example', () => {
   beforeEach(async () => {
     await device.reloadReactNative();
@@ -20,4 +22,17 @@ describe('Example', () => {
   //     .onPress();
   //   await expect(element(by.text('Button pressed'))).toBeVisible();
   // });
+
+  test('should call API and return correct message', async () => {
+    // return fetch('https://test-health-api.herokuapp.com/').then(res =>
+    //   res.text().then(resText => expect(resText).toBe('OK!')),
+    // );
+
+    return fetch('https://test-health-api.herokuapp.com/').then(res =>
+      res.text().then(resText => {
+        console.log(resText);
+        expect(resText).toBe('OK!');
+      }),
+    );
+  });
 });

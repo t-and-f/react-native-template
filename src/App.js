@@ -29,6 +29,10 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 const App = () => {
   React.useEffect(() => {
     SplashScreen.hide();
+
+    fetch('https://test-health-api.herokuapp.com/').then(response =>
+      response.text().then(text => console.log(text)),
+    );
   });
 
   return (
