@@ -638,7 +638,7 @@
 			baseConfigurationReference = 90B410FCDC9E646165E3BC3C /* Pods-reactNativeTemplate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 26ZS98S6V5;
 				HEADER_SEARCH_PATHS = (
@@ -693,7 +693,7 @@
 			baseConfigurationReference = 12A560C179BDAE689E4DB45C /* Pods-reactNativeTemplate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 26ZS98S6V5;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
