@@ -164,18 +164,13 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
-        localKeystoreRelease {
+        release {
             if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
                 storeFile file(MYAPP_UPLOAD_STORE_FILE)
                 storePassword password
                 keyAlias MYAPP_UPLOAD_KEY_ALIAS
                 keyPassword password
             }
-        }
-        appCenterRelease {
-            storePassword System.getProperty("APPCENTER_KEYSTORE_PASSWORD")
-            keyAlias System.getProperty("APPCENTER_KEY_ALIAS")
-            keyPassword System.getProperty("APPCENTER_KEY_PASSWORD")
         }
     }
     buildTypes {
