@@ -1,4 +1,4 @@
-package com.reactnativetemplate;
+package com.tandf.reactnativetemplate;
 
 import android.content.Intent;
 import android.os.Bundle;
