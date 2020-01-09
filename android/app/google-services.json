@@ -8,7 +8,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:895602951471:android:03fe7a46a885d479ff0dda",
+        "mobilesdk_app_id": "1:895602951471:android:1a2568c5d7283675ff0dda",
         "android_client_info": {
           "package_name": "com.tandf.reactnativetemplate"
         }
@@ -30,6 +30,13 @@
             {
               "client_id": "895602951471-eoi5r7tpq3htgsuju8r22g7h41kaiaps.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "895602951471-uh2nj556amq4d0f10naop1f12224fsju.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tandf.reactNativeTemplate"
+              }
             }
           ]
         }
