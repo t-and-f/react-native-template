@@ -35,9 +35,7 @@ const App = () => {
   });
 
   const checkPermission = async () => {
-    const enabled = await firebase()
-      .messaging()
-      .hasPermission();
+    const enabled = await firebase.messaging().hasPermission();
     if (enabled) {
       getFcmToken();
     } else {
