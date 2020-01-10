@@ -27,11 +27,13 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 // pushNotifications.configure();
 
 const App = () => {
+  const [label, setLabel] = React.useState('Loading...');
+
   React.useEffect(() => {
     SplashScreen.hide();
 
     fetch('https://test-health-api.herokuapp.com/').then(response =>
-      response.text().then(text => console.log(text)),
+      response.text().then(text => setLabel(text)),
     );
   });
 
@@ -45,6 +47,9 @@ const App = () => {
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Welcome</Text>
+              <Text testID="sub-title" style={styles.sectionSubTitle}>
+                {label} Test2
+              </Text>
               <Text style={styles.sectionDescription}>
                 Edit <Text style={styles.highlight}>App.js</Text> to change this
                 screen and then come back to see your edits.
@@ -92,6 +97,9 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: '600',
     color: Colors.white,
+  },
+  sectionSubTitle: {
+    fontSize: 20,
   },
   sectionDescription: {
     marginTop: 8,
