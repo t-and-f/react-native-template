@@ -20,4 +20,8 @@ describe('Example', () => {
   //     .onPress();
   //   await expect(element(by.text('Button pressed'))).toBeVisible();
   // });
+
+  test('should call API and return correct message', async () => {
+    await expect(element(by.id('sub-title'))).toHaveText('OK! Test2');
+  });
 });
