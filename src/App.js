@@ -17,25 +17,89 @@ import {
   Button,
   ToastAndroid,
 } from 'react-native';
-import SplashScreen from 'react-native-splash-screen';
-// import codePush from 'react-native-code-push';
-import config from './config';
-
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-// import {pushNotifications} from './services';
+import SplashScreen from 'react-native-splash-screen';
+import firebase from 'react-native-firebase';
+// import codePush from 'react-native-code-push';
 
-// pushNotifications.configure();
+import config from './config';
+import {pushNotifications} from './services';
+
+pushNotifications.configure();
 
 const App = () => {
   const [label, setLabel] = React.useState('Loading...');
 
   React.useEffect(() => {
     SplashScreen.hide();
-
+    
     fetch('https://test-health-api.herokuapp.com/').then(response =>
       response.text().then(text => setLabel(text)),
     );
+    
+    checkPermission();
+    messageListener();
   });
+
+  const checkPermission = async () => {
+    const enabled = await firebase.messaging().hasPermission();
+    if (enabled) {
+      getFcmToken();
+    } else {
+      requestPermission();
+    }
+  };
+
+  const getFcmToken = async () => {
+    const fcmToken = await firebase.messaging().getToken();
+    if (fcmToken) {
+      console.log(fcmToken);
+      showNotification('Your firebase token is:', fcmToken);
+    } else {
+      showNotification('Failed', 'No token received');
+    }
+  };
+
+  const requestPermission = async () => {
+    try {
+      await firebase.messaging().requestPermission();
+    } catch (err) {}
+  };
+
+  const messageListener = async () => {
+    this.notificationListener = firebase
+      .notifications()
+      .onNotification(notification => {
+        const {title, body} = notification;
+        showNotification(title, body);
+      });
+
+    this.notificationOpenedListener = firebase
+      .notifications()
+      .onNotificationOpened(notificationOpen => {
+        const {title, body} = notificationOpen.notification;
+        showNotification(title, body);
+      });
+
+    const notificationOpen = await firebase
+      .notifications()
+      .getInitialNotification();
+    if (notificationOpen) {
+      const {title, body} = notificationOpen.notification;
+      this.showNotification(title, body);
+    }
+
+    this.messageListener = firebase.messaging().onMessage(message => {
+      console.log(JSON.stringify(message));
+    });
+  };
+
+  const showNotification = (title, message) => {
+    pushNotifications.notification({
+      title,
+      message,
+    });
+  };
 
   return (
     <View style={styles.container}>
