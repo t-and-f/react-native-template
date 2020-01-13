@@ -2,16 +2,19 @@
 
 echo "iOS: Installing applesimutils..."
 brew tap wix/brew
+brew update
 brew install wix/brew/applesimutils
+
 
 echo "iOS: Installing detox cli..."
 npm install -g detox-cli
+npm install -g detox
 
 echo "iOS: Building the project..."
-yarn detox build
+detox build
 
 echo "iOS: Cleaning cache..."
-yarn detox clean-framework-cache && yarn detox build-framework-cache
+detox clean-framework-cache && detox build-framework-cache
 
 echo "iOS: Executing tests..."
-yarn detox test
+detox test
