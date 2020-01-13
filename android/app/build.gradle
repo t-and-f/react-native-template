@@ -146,8 +146,8 @@ android {
         applicationId "com.tandf.reactnativetemplate"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 4
-        versionName "1.4.0"
+        versionCode 5
+        versionName "1.4.1"
     }
     splits {
         abi {
