@@ -321,7 +321,7 @@ PODS:
     - React-cxxreact (= 0.61.5)
     - React-jsi (= 0.61.5)
     - ReactCommon/jscallinvoker (= 0.61.5)
-  - RNCPushNotificationIOS (1.0.4):
+  - RNCPushNotificationIOS (1.0.5):
     - React
   - RNFirebase (5.6.0):
     - Firebase/Core
@@ -511,7 +511,7 @@ SPEC CHECKSUMS:
   React-RCTText: 9ccc88273e9a3aacff5094d2175a605efa854dbe
   React-RCTVibration: a49a1f42bf8f5acf1c3e297097517c6b3af377ad
   ReactCommon: 198c7c8d3591f975e5431bec1b0b3b581aa1c5dd
-  RNCPushNotificationIOS: 38512fc36f782cbd5533144587dafab73f7e7d6e
+  RNCPushNotificationIOS: 30ed75aa2981a4ee00b8a2c46599ff18a9c7fcf6
   RNFirebase: 37daa9a346d070f9f6ee1f3b4aaf4c8e3b1d5d1c
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
