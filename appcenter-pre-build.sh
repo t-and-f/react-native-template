@@ -7,14 +7,14 @@ brew install wix/brew/applesimutils
 
 
 echo "iOS: Installing detox cli..."
-npm install -g detox-cli
-npm install -g detox
+yarn global add detox-cli
+yarn global add detox
 
 echo "iOS: Building the project..."
-detox build
+yarn detox build
 
 echo "iOS: Cleaning cache..."
-detox clean-framework-cache && detox build-framework-cache
+yarn detox clean-framework-cache && yarn detox build-framework-cache
 
 echo "iOS: Executing tests..."
-detox test
+yarn detox test
