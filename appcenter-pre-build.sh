@@ -10,11 +10,13 @@ echo "iOS: Installing detox cli..."
 npm install -g detox-cli
 npm install -g detox
 
+pod deintegrate && pod install
+
 echo "iOS: Building the project..."
 detox build --configuration ios.release
 
 echo "iOS: Cleaning cache..."
-detox clean-framework-cache && detox build-framework-cache
+# detox clean-framework-cache && detox build-framework-cache
 
 echo "iOS: Executing tests..."
 detox test --configuration ios.release --cleanup
