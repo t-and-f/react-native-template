@@ -55,7 +55,7 @@
     "test-runner": "jest",
     "configurations": {
       "ios.release": {
-        "binaryPath": "./ios/build/Build/Products/Release-iphonesimulator/reactNativeTemplate.app",
+        "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/reactNativeTemplate.app",
         "build": "xcodebuild -workspace ios/reactNativeTemplate.xcworkspace -configuration release -scheme reactNativeTemplate -sdk iphonesimulator -derivedDataPath ios/build",
         "type": "ios.simulator",
         "name": "iPhone 11"

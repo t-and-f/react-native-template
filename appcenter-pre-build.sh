@@ -11,10 +11,10 @@ yarn global add detox-cli
 yarn global add detox
 
 echo "iOS: Building the project..."
-yarn detox build
+yarn detox build --configuration ios.release
 
 echo "iOS: Cleaning cache..."
 yarn detox clean-framework-cache && yarn detox build-framework-cache
 
 echo "iOS: Executing tests..."
-yarn detox test
+yarn detox test --configuration ios.release --cleanup
