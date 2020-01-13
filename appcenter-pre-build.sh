@@ -3,7 +3,7 @@
 echo "iOS: Installing applesimutils..."
 brew tap wix/brew
 brew update
-brew install wix/brew/applesimutils
+brew install wix/brew/applesimutils --HEAD
 
 
 echo "iOS: Installing detox cli..."
