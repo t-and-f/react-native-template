@@ -58,7 +58,9 @@
         "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/reactNativeTemplate.app",
         "build": "xcodebuild -workspace ios/reactNativeTemplate.xcworkspace -configuration release -scheme reactNativeTemplate -sdk iphonesimulator -derivedDataPath ios/build",
         "type": "ios.simulator",
-        "name": "iPhone 11"
+        "device": {
+          "type": "iPhone 11"
+        }
       }
     }
   }
