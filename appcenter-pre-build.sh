@@ -10,7 +10,7 @@ echo "iOS: Installing detox cli..."
 npm install -g detox-cli
 npm install -g detox
 
-pod deintegrate && pod install
+cd ios && pod deintegrate && pod install && cd ..
 
 echo "iOS: Building the project..."
 detox build --configuration ios.release
