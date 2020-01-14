@@ -206,7 +206,6 @@
 				84338332B27A0E043A061906 /* Pods-reactNativeTemplateTests.debug.xcconfig */,
 				2C122EE9A14A6BE02E37551F /* Pods-reactNativeTemplateTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
